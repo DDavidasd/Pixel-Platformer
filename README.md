@@ -20,8 +20,13 @@ A complete 2D pixel-art platformer game independently developed from scratch usi
     *   Dynamic audio feedback (pitch shifting effect on coin collection).
 
 
-# **Software Architecture, Clean Code (SOLID)**
+# **Software Architecture, Testing & Clean Code (SOLID)**
 The project was built using an **iterative development** workflow with a strict focus on code quality:
+*   **Iterative Testing & Playtesting:** Each development cycle was paired with rigorous manual testing and playtesting. This ensured that newly introduced mechanics (like wall-sliding or dashing) seamlessly integrated with existing physics without breaking character controller constraints.
+*   **Gizmos-Assisted Debugging:** Leveraged Unity's `OnDrawGizmos` rendering to visually test and verify collision radiuses, ground checks, and enemy edge-detection zones in real-time within the editor, drastically reducing physics-related bugs.
+*   **Raycast-Based Collision Detection:** Utilized `Physics2D.Raycast` and `Physics2D.OverlapCircleAll` for highly precise environment and enemy detection. This bypasses the typical latency of standard physics triggers, ensuring responsive controls and accurate hit registration.
+
+### **SOLID Principles:**
 *   **Single Responsibility Principle (SRP):** Classes have one clear responsibility. For example, the `Trap` class handles interaction logic exclusively, without managing player health or other mechanics.
 *   **Open/Closed Principle (OCP):** The system is easily extendable. The base `Trap` class provides basic functionality, allowing various trap types to inherit and expand upon it without modifying existing code.
 *   **Liskov Substitution Principle (LSP):** The base `Enemy` class establishes core behaviors. Derived classes (e.g., `Skeleton`) override methods correctly without breaking the base logic.
