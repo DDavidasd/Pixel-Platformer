@@ -11,7 +11,7 @@ A complete 2D pixel-art platformer game independently developed from scratch usi
 *   **Enemies and traps:** 
     *   *Enemies:* Skeleton (patrolling with platform edge detection using gizmos) and Ghost.
     *   *Traps:* Saw (moving along specific points), Fire Trap (deactivatable via switches), and falling Boulder (with custom timing delays).
-*   **Game Systems:** 
+*   **Game systems:** 
     *   3 Difficulty levels (Easy with deadzone protection, Normal with 3 lives, Hard with 1 life).
     *   Save and checkpoint system.
     *   Main Menu, settings (volume sliders utilizing `PlayerPrefs` for persistent storage).
