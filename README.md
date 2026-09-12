@@ -25,10 +25,19 @@ The project was built using an **iterative development** workflow with a strict 
 *   **Single Responsibility Principle (SRP):** Classes have one clear responsibility. For example, the `Trap` class handles interaction logic exclusively, without managing player health or other mechanics.
 *   **Open/Closed Principle (OCP):** The system is easily extendable. The base `Trap` class provides basic functionality, allowing various trap types to inherit and expand upon it without modifying existing code.
 *   **Liskov Substitution Principle (LSP):** The base `Enemy` class establishes core behaviors. Derived classes (e.g., `Skeleton`) override methods correctly without breaking the base logic.
-*   **Design Patterns:** Implemented the **Singleton** pattern for the `AudioManager` to ensure a single instance and prevent duplicate background music instances.
-*   **Clean Code Principles:** Followed **DRY** (Don't Repeat Yourself) via proper inheritance, **KISS** (Keep It Simple, Stupid) for readability, and **YAGNI** (You Aren't Gonna Need It) to avoid over-engineering.
+
+### **Design Patterns:** 
+*   **Singleton Pattern:** Applied to global managers (like `AudioManager` and `PlayerManager`) to ensure a single, globally accessible instance throughout the game's lifecycle, preventing duplicate background tracks or broken state references.
+*   **Factory Method Approach:** Utilized via Unity's dynamic `Instantiate` system to handle runtime visual assets. For instance, the destruction mechanism safely spawns configured particle prefabs (`deathFx`) at runtime without hardcoding specific effect types into the core gameplay logic.
+*   **Implicit Finite State Machine (FSM):** The `Player` controller tracks movement variables (`isGrounded`, `isWallSliding`, `isDashing`, `isGlide`) to coordinate complex 2D platformer mechanics. These logical states are directly mapped and synchronized with Unity's state-driven **Animator** system.
+*   **Strategy Pattern (Implicit):** Used in the player's dynamic skinning system (`LayerSkinAnim`). Instead of using heavy conditional branches (`if/else`) to check which character skin is selected, the system dynamically switches behavioral graphics at runtime by shifting Unity Animator layer weights based on the chosen skin ID.
+*   **Template Method Pattern:** Implemented across the obstacle and enemy systems. The base `Trap` and `Enemy` classes define core physics, collision, and interaction rules, while specialized derived classes (like `Trap_Fire`, `Ghost`, or `Enemy_Skeleton`) safely override and extend behaviors without rewriting fundamental logic.
+
+### **Clean Code Principles:** 
+Followed **DRY** (Don't Repeat Yourself) via proper inheritance, **KISS** (Keep It Simple, Stupid) for readability, and **YAGNI** (You Aren't Gonna Need It) to avoid over-engineering.
 
 # **Retrospective, Future Improvements**
-*   **State Pattern:** In hindsight, handling complex player movement states with methods led to large `if-else` structures. Refactoring the movement system into a proper **State Machine** would significantly clean up the code and animation handling.
+*   **Dedicated State Machine:** While the current implicit FSM successfully manages state transitions via Boolean values and the Unity Animator, refactoring the physics and input logic into a dedicated C# State Pattern architecture would further decouple the code as the player's moveset expands.
+*   **Object Pooling:** Implement an Object Pooler for frequently instantiated and destroyed elements (such as particle effects, projectiles, or transient traps) to reduce runtime garbage collection and optimize CPU overhead.
 *   **Audio Enhancement:** Implement **3D AudioSource** component mechanics (e.g., spatial audio for the saw trap where volume depends on proximity).
 *   **Expansion:** Add multiplayer support and introduce new character types, and hazards.
