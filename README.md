@@ -38,6 +38,5 @@ Followed **DRY** (Don't Repeat Yourself) via proper inheritance, **KISS** (Keep 
 
 # **Retrospective, Future Improvements**
 *   **Dedicated State Machine:** While the current implicit FSM successfully manages state transitions via Boolean values and the Unity Animator, refactoring the physics and input logic into a dedicated C# State Pattern architecture would further decouple the code as the player's moveset expands.
-*   **Object Pooling:** Implement an Object Pooler for frequently instantiated and destroyed elements (such as particle effects, projectiles, or transient traps) to reduce runtime garbage collection and optimize CPU overhead.
 *   **Audio Enhancement:** Implement **3D AudioSource** component mechanics (e.g., spatial audio for the saw trap where volume depends on proximity).
 *   **Expansion:** Add multiplayer support and introduce new character types, and hazards.
