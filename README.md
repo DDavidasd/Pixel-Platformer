@@ -1,5 +1,5 @@
 # Pixel-Platformer
-A complete 2D pixel-art platformer game independently developed from scratch using the Unity engine and C#. This project was my BSc Thesis, covering the entire lifecycle from concept art design to final testing.
+A complete 2D pixel-art platformer game independently developed from scratch using the Unity engine and C#. This project was my BSc thesis, covering the entire lifecycle from concept art design to final testing.
 
 **Game link:** https://github.com/DDavidasd/Pixel-Platformer/releases/tag/v1.0
 
