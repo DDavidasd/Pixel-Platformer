@@ -19,7 +19,7 @@ A complete 2D pixel-art platformer game independently developed from scratch usi
     *   Dynamic audio feedback (pitch shifting effect on coin collection).
 
 
-# *   **Software architecture, clean code (SOLID)**
+# **Software architecture, clean code (SOLID)**
 The project was built using an **iterative development** workflow with a strict focus on code quality:
 *   **Single Responsibility Principle (SRP):** Classes have one clear responsibility. For example, the `Trap` class handles interaction logic exclusively, without managing player health or other mechanics.
 *   **Open/Closed Principle (OCP):** The system is easily extendable. The base `Trap` class provides basic functionality, allowing various trap types to inherit and expand upon it without modifying existing code.
@@ -27,7 +27,7 @@ The project was built using an **iterative development** workflow with a strict 
 *   **Design Patterns:** Implemented the **Singleton** pattern for the `AudioManager` to ensure a single instance and prevent duplicate background music instances.
 *   **Clean Code Principles:** Followed **DRY** (Don't Repeat Yourself) via proper inheritance, **KISS** (Keep It Simple, Stupid) for readability, and **YAGNI** (You Aren't Gonna Need It) to avoid over-engineering.
 
-# *   **Retrospective, Future Improvements**
+# **Retrospective, Future Improvements**
 *   **State Pattern:** In hindsight, handling complex player movement states with methods led to large `if-else` structures. Refactoring the movement system into a proper **State Machine** would significantly clean up the code and animation handling.
 *   **Audio Enhancement:** Implement **3D AudioSource** component mechanics (e.g., spatial audio for the saw trap where volume depends on proximity).
 *   **Expansion:** Add multiplayer support and introduce new character types, and hazards.
