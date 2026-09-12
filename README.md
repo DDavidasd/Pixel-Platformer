@@ -5,7 +5,7 @@ A complete 2D pixel-art platformer game independently developed from scratch usi
 
 **Youtube link:** https://www.youtube.com/watch?v=-Fo3tjfQaIk
 
-**Scripts link:** https://github.com/DDavidasd/Pixel-Platformer/tree/main/Assets/Scripts
+**Scripts link:** https://github.com/DDavidasd/Pixel-Platformer/tree/main/Scripts
 
 *   **Movement:** Run, jump, double jump, wall slide (with fast slide mechanics), glide, and dash.
 *   **Dynamic gameplay elements:** Moving platforms (multi-point pathing), one-way platforms (jump through from below), and parallax background scrolling (5 independent layers).
